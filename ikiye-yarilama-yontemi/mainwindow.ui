@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>İkiye Bölme (Bisection) Metodu</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
@@ -41,6 +44,9 @@
       <width>466</width>
       <height>421</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QLineEdit" name="le_a">

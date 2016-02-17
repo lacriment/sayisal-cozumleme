@@ -31,7 +31,6 @@ void MainWindow::on_pushButton_clicked()
         ui->lbl_durum->setText("Verilen aralıkta kök yoktur.");
     }
     else {
-        ui->tableWidget->verticalHeader()->setVisible(false);
         ui->tableWidget->setColumnCount(9);
         ui->tableWidget->setRowCount(30);
         for (int i = 0; i < 9; i++) {
