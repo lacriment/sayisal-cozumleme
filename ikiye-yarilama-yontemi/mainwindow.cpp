@@ -24,7 +24,7 @@ void MainWindow::on_pushButton_clicked()
     double a = ui->le_a->text().toDouble();
     double b = ui->le_b->text().toDouble();
     double eps = 1e-6;
-    int n = 1;
+    int n = 0;
     double m;
 
     if (f(a) * f(b) > 0) {
@@ -33,19 +33,20 @@ void MainWindow::on_pushButton_clicked()
     else {
         ui->tableWidget->setColumnCount(9);
         ui->tableWidget->setRowCount(30);
-        for (int i = 0; i < 9; i++) {
-            ui->tableWidget->setColumnWidth(i,50);
-        }
-        ui->tableWidget->setItem(0, 0, new QTableWidgetItem("#"));
-        ui->tableWidget->setItem(0, 1, new QTableWidgetItem("a"));
-        ui->tableWidget->setItem(0, 2, new QTableWidgetItem("b"));
-        ui->tableWidget->setItem(0, 3, new QTableWidgetItem("m"));
-        ui->tableWidget->setItem(0, 4, new QTableWidgetItem("f(a)"));
-        ui->tableWidget->setItem(0, 5, new QTableWidgetItem("f(b)"));
-        ui->tableWidget->setItem(0, 6, new QTableWidgetItem("f(m)"));
-        ui->tableWidget->setItem(0, 7, new QTableWidgetItem("f(a) * f(m)"));
-        ui->tableWidget->setItem(0, 8, new QTableWidgetItem("abs((b - a) / 2))"));
 
+        for (int i = 0; i < 9; i++) {
+            ui->tableWidget->setColumnWidth(i,54);
+        }
+
+        ui->tableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem("#"));
+        ui->tableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem("a"));
+        ui->tableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem("b"));
+        ui->tableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem("m"));
+        ui->tableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem("f(a)"));
+        ui->tableWidget->setHorizontalHeaderItem(5, new QTableWidgetItem("f(b)"));
+        ui->tableWidget->setHorizontalHeaderItem(6, new QTableWidgetItem("f(m)"));
+        ui->tableWidget->setHorizontalHeaderItem(7, new QTableWidgetItem("f(a) * f(m)"));
+        ui->tableWidget->setHorizontalHeaderItem(8, new QTableWidgetItem("|(b-a)/2|"));
 
         while (fabs((b - a) / 2) > eps) {
             m = (a + b) / 2;
